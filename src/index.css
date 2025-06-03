@@ -1,1 +1,22 @@
+/* index.css */
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #b4d429;
+  --color-dark: #171923;
+  --color-light: #fff;
+  --color-body: #1d1e28;
+
+  /* Define container properties */
+  --container-padding: 1.25rem;
+}
+
+@layer components {
+  .container {
+    width: 100%; /* Ensure it takes full width initially */
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    margin-left: auto; /* For center: true */
+    margin-right: auto; /* For center: true */
+  }
+}
