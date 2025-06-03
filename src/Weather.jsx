@@ -1,21 +1,16 @@
-import Header from "./components/header/Header";
-import WeatherBoard from "./components/weather/WeatherBoard";
+import WeatherContent from "./components/weather/WeatherContent";
 import FavouriteProvider from "./providers/FavouriteProvider";
+import LocationProvider from "./providers/LocationProvider";
 import WeatherProvider from "./providers/weatherProvider";
 
 export default function Weather() {
   return (
-    <WeatherProvider>
-      <FavouriteProvider>
-        <div className="h-screen grid place-items-center">
-          <Header />
-          <main>
-            <section>
-              <WeatherBoard />
-            </section>
-          </main>
-        </div>
-      </FavouriteProvider>
-    </WeatherProvider>
+    <LocationProvider>
+      <WeatherProvider>
+        <FavouriteProvider>
+          <WeatherContent />
+        </FavouriteProvider>
+      </WeatherProvider>
+    </LocationProvider>
   );
 }

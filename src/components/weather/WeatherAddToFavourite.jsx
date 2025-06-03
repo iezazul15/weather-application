@@ -9,6 +9,7 @@ export default function WeatherAddToFavourite() {
   const {
     weatherData: { latitude, longitude, location },
   } = useContext(WeatherContext);
+
   const [isFavourite, setIsFavourite] = useState(false);
   function handleFavourite() {
     if (isFavourite) {
@@ -21,11 +22,9 @@ export default function WeatherAddToFavourite() {
     }
   }
   useEffect(() => {
-    console.log(favourites, location);
     const found = favourites.find((fav) => fav.location === location);
-    console.log(found);
     setIsFavourite(found);
-  }, [location]);
+  }, [location, favourites]);
   return (
     <div className="md:col-span-2">
       <div className="flex items-center justify-end space-x-6">
